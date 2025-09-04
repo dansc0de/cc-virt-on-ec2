@@ -8,7 +8,7 @@ Leaving it running will consume your free-tier credits and may impact your accou
 
 **Goal:** Experience virtualization concepts on AWS free-tier instances without hardware-assisted virtualization (KVM). We’ll use QEMU **in emulation mode** on a `t3.micro` or `t3.small` and still practice the core skills: creating a VM disk, booting from an ISO, and installing a tiny Linux.
 
-> **Heads-up on performance:** `t3.micro/small` do **not** expose VT-x/AMD-V to guests, so QEMU runs in **full software emulation**. Installs and boots will be slower (several minutes). That’s expected and part of the learning outcome.
+> **Heads-up on performance:** `t3.micro/small` do **not** expose VT-x/AMD-V to guests, so QEMU runs in **full software emulation**. Installs and boots will be slower (several seconds/mins). That’s expected and part of the assignment.
 
 ---
 
@@ -167,7 +167,6 @@ qemu-system-x86_64 --version
 
 * This lab intentionally uses QEMU directly, without libvirt, for simplicity and transparency.
 * On machines with KVM support, adding `-enable-kvm` dramatically speeds up boot and install.
-* Demonstrating the speed difference between KVM-enabled and emulation-only environments reinforces the hardware-assist concept.
 
 ---
 
